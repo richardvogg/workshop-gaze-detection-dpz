@@ -1,0 +1,7 @@
+{
+	"root": "/user/vogg/u24033/.project/dir.project/Richard_Vogg/data/Rocamadour",
+	"train":
+	{
+		"demo_train": "PriMAT-tracking/src/data/rocamadour.train"
+	}
+}
