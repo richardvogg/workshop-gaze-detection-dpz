@@ -96,7 +96,7 @@ class ImageLabelDataset(ImageDataset):
         # List label files.
         replace = "images" if "images" in self.files[0] else "eval"
         self.label_files = [
-            x.replace(replace, "labels_with_ids").split(".")[0] + ".txt"
+            x.replace(replace, "labels").split(".")[0] + ".txt"
             for x in self.files
         ]
 
@@ -207,7 +207,7 @@ class LoadImagesAndBoxes:  # for inference
             
             
         self.label_files = [
-                x.replace('images', 'labels_with_ids').replace('.png', '.txt').replace('.jpg', '.txt').replace('.JPG', '.txt')
+                x.replace('images', 'labels').replace('.png', '.txt').replace('.jpg', '.txt').replace('.JPG', '.txt')
                 for x in self.files]
 
         self.nF = len(self.files)  # number of image files
@@ -420,7 +420,7 @@ class JointDataset(LoadImagesAndLabels):  # for training
                 )
 
             self.label_files[ds] = [
-                x.replace("images", "labels_with_ids")
+                x.replace("images", "labels")
                 .replace("eval", "labels_with_ids")
                 .replace(".png", ".txt")
                 .replace(".jpg", ".txt")
@@ -712,7 +712,7 @@ class JointDataset2(LoadImagesAndLabels):  # for training jointly for tracking a
                 )
 
             self.label_files[ds] = [
-                x.replace("images", "labels_with_ids")
+                x.replace("images", "labels")
                 .replace("eval", "labels_with_ids")
                 .replace(".png", ".txt")
                 .replace(".jpg", ".txt")
