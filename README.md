@@ -25,10 +25,14 @@ Activate the environment:
 ```source dpz_workshop/env/activate```
 
 Make a directory for your data (if it does not exist). Optionally, create subfolders if you need them: 
+
 ```mkdir <Your_Name>```
+
 ```cd <Your_Name>```
+
 ```mkdir videos```
-```cd $HOME``
+
+```cd $HOME```
 
 Add both folders $HOME and $PROJECT via their realpaths to your navigation window:
 
@@ -60,7 +64,7 @@ Activate "Export labels". If you start a new project, activate "Reset class coun
 
 <img src="imgs/save_screenshot.png" alt="save screenshot" width="300"/>
 
-After annotating enough (at least 100) images, copy both images and labels to your data folder (can be done by drag-and-drop). I renamed my folders to "tracking_images" and "tracking_labels" but that is optional.
+After annotating enough (at least 100) images, copy both images and labels to your data folder (can be done by drag-and-drop into the navigation sidebar). I renamed my folders to "tracking_images" and "tracking_labels" but that is optional.
 
 ### Tracking model training
 
