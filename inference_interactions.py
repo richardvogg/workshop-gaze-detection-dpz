@@ -23,10 +23,10 @@ from gazelle.utils import vat_auc, vat_l2
 video="GH010557"
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--video_path", type=str, default=f'../.project/dir.project/Richard_Vogg/data/Rocamadour/videos/{video}.MP4')
-parser.add_argument("--label_path", type=str, default=f'../.project/dir.project/Richard_Vogg/data/Rocamadour/full_videos_with_tracks/{video}.txt')
+parser.add_argument("--video_path", type=str, default=f'../.project/dir.project/workshop-data/videos/{video}.MP4')
+parser.add_argument("--label_path", type=str, default=f'../.project/dir.project/workshop-data/full_videos_with_tracks/{video}.txt')
 parser.add_argument("--model_name", type=str, default="gazelle_dinov2_vitb14_inout")
-parser.add_argument("--ckpt_path", type=str, default="../.project/dir.project/pretrained_models/interaction_model_19.pt") #"./experiments/train_gazelle_vitb_lemurs/2025-06-17_18-09-57/epoch_7.pt"
+parser.add_argument("--ckpt_path", type=str, default="../.project/dir.project/workshop-models/interaction_model_19.pt") #"./experiments/train_gazelle_vitb_lemurs/2025-06-17_18-09-57/epoch_7.pt"
 parser.add_argument("--output_path", type=str, default=f"gazelle/output_images/{video}/")
 parser.add_argument("--batch_size", type=int, default=1)
 args = parser.parse_args()
