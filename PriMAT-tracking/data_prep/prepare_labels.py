@@ -1,7 +1,7 @@
 from pathlib import Path
 
 # ===== Global Parameters =====
-DATA_ROOT = Path("../.project/dir.project/Richard_Vogg/data/Rocamadour/")       # main dataset folder
+DATA_ROOT = Path("../.project/dir.project/workshop-data/")       # main dataset folder
 IMAGE_FOLDER_NAME = "tracking_labels"               # subfolder containing the images
 OUTPUT_FILE_PATH = "PriMAT-tracking/src/data/rocamadour.train"         # name of the output .train file
 # =============================
