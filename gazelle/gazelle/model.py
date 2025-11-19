@@ -5,7 +5,7 @@ from timm.models.vision_transformer import Block
 import math
 
 import gazelle.utils as utils
-from gazelle.backbone import DinoV2Backbone, DinoV2BackboneTimm
+from gazelle.backbone import DinoV2Backbone
 
 
 class GazeLLE(nn.Module):

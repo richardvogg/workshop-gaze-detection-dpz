@@ -15,8 +15,8 @@ from gazelle.utils import vat_auc, vat_l2
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--model', type=str, default="gazelle_dinov2_vitb14_inout")
-parser.add_argument('--init_ckpt', type=str, default='../.project/dir.project/pretrained_models/gazelle_dinov2_vitb14_inout.pt', help='checkpoint for initialization (trained on GazeFollow)')
-parser.add_argument('--data_path', type=str, default='../.project/dir.project/Richard_Vogg/data/Rocamadour')
+parser.add_argument('--init_ckpt', type=str, default='../.project/dir.project/workshop-models/gazelle_dinov2_vitb14_inout.pt', help='checkpoint for initialization (trained on GazeFollow)')
+parser.add_argument('--data_path', type=str, default='../.project/dir.project/workshop-data')
 parser.add_argument('--dataset_list', type=list, default=['interaction_labels'])
 parser.add_argument('--frame_sample_every', type=int, default=3)
 parser.add_argument('--ckpt_save_dir', type=str, default='gazelle/experiments')

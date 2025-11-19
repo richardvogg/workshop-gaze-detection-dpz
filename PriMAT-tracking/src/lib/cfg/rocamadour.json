@@ -1,5 +1,5 @@
 {
-	"root": "/user/vogg/u24033/.project/dir.project/Richard_Vogg/data/Rocamadour",
+	"root": "/mnt/vast-nhr/projects/cidas_wrkshp_gaze_detection_dl/workshop-data",
 	"train":
 	{
 		"demo_train": "PriMAT-tracking/src/data/rocamadour.train"
