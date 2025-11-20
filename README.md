@@ -104,9 +104,13 @@ Move your label folders to the cluster (via drag-and-drop).
 ### Interaction model training
 
 Go to your code folder (```cd $HOME/workshop-gaze-detection-dpz```).
+
 Run ```python gazelle/data_prep/convert_SILVI_interactions.py```.
+
 Run ```python gazelle/data_prep/dataset_split.py```.
+
 Run ```python gazelle/data_prep/add_negative_frames.py```.
+
 Before that you can check what is in those files and potentially adapt paths.
 
 Open ```train_interactions.py``` and adapt the paths.
@@ -120,10 +124,11 @@ Open ```inference_interactions.py``` and adapt the paths.
 Run ```python inference_interactions.py```.
 
 
-<img src="imgs/set_classes.png" alt="set classes" width="400"/>
+<img src="imgs/output_interactions.png" alt="set classes" width="400"/>
 
 Your output is in gazelle/output_images/<videoname>.
 If you want to convert it to a video, run:
+
 ```cd gazelle/output_images/<videoname>```
 
 ```module load ffmpeg```
