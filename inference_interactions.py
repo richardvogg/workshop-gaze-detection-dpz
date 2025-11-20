@@ -20,7 +20,7 @@ from gazelle.utils import vat_auc, vat_l2
 
 #lemurs_smallnew_ViTB14/2025-07-29_15-02-09/epoch_19.pt
 
-video="GH010557"
+video="GH010563_short"
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--video_path", type=str, default=f'../.project/dir.project/workshop-data/videos/{video}.MP4')
@@ -122,7 +122,7 @@ def main(vis = False, start_frame=0, end_frame='last', by = 5, gaze_thresh = 0.9
     model.eval()
     # Create a list of indices starting at idx=2000 and skipping every 5th idx
     if end_frame == 'last':
-        end_frame = len(VideoFrameDatasetWithBBoxes(args.video_path, args.label_path, transform))
+        end_frame = len(VideoFrameDatasetWithBBoxes(args.video_path, args.label_path, transform)) - 1
     indices = list(range(start_frame, end_frame, by))
 
     dataset = VideoFrameDatasetWithBBoxes(args.video_path, args.label_path, transform)
@@ -255,4 +255,4 @@ def main(vis = False, start_frame=0, end_frame='last', by = 5, gaze_thresh = 0.9
                 
         
 if __name__ == "__main__":
-    main(vis = True, start_frame=1640, end_frame = 5400, by = 5, gaze_thresh = 0.2)
+    main(vis = True, start_frame=0, end_frame = 'last', by = 5, gaze_thresh = 0.5)

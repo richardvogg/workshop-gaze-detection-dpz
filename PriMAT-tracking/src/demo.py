@@ -41,7 +41,8 @@ def demo(opt):
 
     if opt.output_format == 'video':
         output_video_path = osp.join(result_root, opt.output_name + '.mp4')
-        cmd_str = 'ffmpeg -framerate {} -y -f image2 -i {}/%05d.jpg -b:v 5000k -c:v h264_nvenc -vf -pix_fmt yuv420p {}'.format(
+        print("output_video_path: ", output_video_path)
+        cmd_str = 'ffmpeg -framerate {} -y -f image2 -i {}/%05d.jpg -b:v 5000k -c:v h264_nvenc -pix_fmt yuv420p {}'.format(
             dataloader.frame_rate, osp.join(result_root, 'frame'), output_video_path)
         os.system(cmd_str)
 

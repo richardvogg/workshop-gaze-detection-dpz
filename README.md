@@ -22,7 +22,7 @@ Go to the project directory:
 ```cd $PROJECT```
 
 Activate the environment:
-```source dpz_workshop/env/activate```
+```source dpz_workshop/bin/activate```
 
 Make a directory for your data (if it does not exist). Optionally, create subfolders if you need them: 
 
@@ -94,9 +94,41 @@ After you are sufficiently happy with the results on a few manually inspected se
 
 ### Interaction labeling
 
+Download your tracking model outputs (.txt files in PriMAT-tracking/videos/(path you specified in ```inference_tracking.sh```)). In case you don't have any, download the ones from $PROJECT/workshop-data/full_videos_with_tracks.
+
+Open videos and tracking outputs in SILVI. Annotate interactions, improve tracks.
+Move your label folders to the cluster (via drag-and-drop).
+
+<img src="imgs/interaction_labels_folder.png" alt="set classes" width="200"/>
+
 ### Interaction model training
+
+Go to your code folder (```cd $HOME/workshop-gaze-detection-dpz```).
+Run ```python gazelle/data_prep/convert_SILVI_interactions.py```.
+Run ```python gazelle/data_prep/dataset_split.py```.
+Run ```python gazelle/data_prep/add_negative_frames.py```.
+Before that you can check what is in those files and potentially adapt paths.
+
+Open ```train_interactions.py``` and adapt the paths.
+
+Run ```python train_interactions.py```. 
 
 ### Inference
 
-### Fair and meaningful evaluation
+Open ```inference_interactions.py``` and adapt the paths.
+
+Run ```python inference_interactions.py```.
+
+
+<img src="imgs/set_classes.png" alt="set classes" width="400"/>
+
+Your output is in gazelle/output_images/<videoname>.
+If you want to convert it to a video, run:
+```cd gazelle/output_images/<videoname>```
+
+```module load ffmpeg```
+
+```folder_name=$(basename "$PWD")```
+
+```ffmpeg -framerate 6 -pattern_type glob -i "frame_*.png" -c:v h264_nvenc -pix_fmt yuv420p "../${folder_name}.mp4"```
 
